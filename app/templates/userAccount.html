@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content">
+        <div class="container">
+            <h3>My Account Information</h3>
+            <div class="account-info">
+                <div class="info-item">
+                    <label for="user-id">User ID:</label>
+                    <input type="text" id="user-id" name="user-id" value="sd" disabled>
+                </div>
+                <div class="info-item">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="sds" disabled>
+                </div>
+                <div class="info-item">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="sds" disabled>
+                </div>
+                <div class="btn-container">
+                    <button>Edit Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

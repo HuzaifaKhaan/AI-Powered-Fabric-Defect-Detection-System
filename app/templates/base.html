@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ title }}</title>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="Title">
+        <img src="\static\Logo.png" alt="Logo" class="logo">
+        <b><span>FABRICO</span></b>
+    </div>
+   
+    <h2>{{ title }}</h2>
+    
+    <!-- Logout button -->
+    <a href="{{ url_for('Fabrico.logout') }}" class="btn btn-primary">Logout</a>
+</div>
+
+<div class="sidebar">
+    <h6>Menu</h6>
+    <div class="links">
+        <ul>
+            <li class="{% if title == 'Dashboard' %}active{% endif %}">
+                <a href="/Fabrico/dashboard"> <i class='bx bxs-dashboard' ></i>
+                Dashboard
+                </a>
+            </li>
+            <li class="{% if title == 'Supervision' %}active{% endif %}">
+                <a href="/Fabrico/supervision"> <i class='bx bxs-camera-home'></i>
+                    Supervision
+                </a>
+            </li>
+            <li class="{% if title == 'Records' %}active{% endif %}">
+                <a href="/Fabrico/fabrics"> <i class='bx bxs-file-find' ></i>
+                Records
+                </a>
+            </li>
+            <hr>
+            <li class="{% if title == 'MyAccount' %}active{% endif %}">
+                <a> <i class='bx bxs-user'></i>
+                {{userid}}
+                </a>
+            </li>
+            {% if userid == 'Emp01' %}
+            <li class="{% if title == 'Admin Portal' %}active{% endif %}">
+                <a href="/Fabrico/adminPortal"> <i class='bx bxs-user'></i>
+                    Admin Portal
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

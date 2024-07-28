@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'Fenomen Sans SCN Semi Bold';
+    src: url('path/to/your/font-file.woff2') format('woff2'), /* Modern Browsers */
+         url('path/to/your/font-file.woff') format('woff'); /* Older Browsers */
+    font-weight: 600; /* Adjust the weight as needed */
+    font-style: normal; /* Adjust the style as needed */
+}
+
+/* Basic styles for navbar and sidebar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: white;
+    color: #000; /* Adjust text color for better visibility */
+    padding: 12px;
+    padding-bottom: 6px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Ensures navbar is above sidebar */
+    border-bottom: 2px solid rgb(211, 209, 209); /* Maintain the bold border */
+}
+
+.navbar .Title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.navbar .Title span {
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 5px;
+    color: rgb(84, 98, 194);
+}
+
+.navbar .logo {
+    width: 38px; /* Adjust the width of the logo */
+    height: 35px;
+}
+.navbar h2 {
+    font-size: 25px;
+    font-weight: 600;
+    padding-right: 72.5%;
+    color: #1f384c;
+}
+.sidebar {
+    background-color: #f1f2f7;
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Enable scrolling if sidebar content exceeds height */
+    margin-top: 0px; /* Ensure content doesn't go behind the navbar */
+    z-index: 1000; /* Ensure sidebar is above navbar */
+}
+.sidebar MyAccount {
+    margin-top: 100px;
+}
+.sidebar h6{
+    margin-left: 41px ;
+    margin-top: 110px;
+    font-weight: 550;
+    color: #817f7f;
+}
+
+.sidebar .links {
+    margin-top: 10px;
+}
+
+.sidebar ul {
+    margin-top: 8px;
+    list-style: none;
+    padding: 0;
+    margin-left: 13%;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Fenomen Sans SCN Semi Bold', Arial, sans-serif;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 14%; /* Adjust this value to match sidebar width */
+    padding: 10px;
+    padding-top: 55px; /* Ensure content doesn't go behind the navbar */
+}
+
+.content2 {
+    margin-left: 18%; /* Adjust this value to match sidebar width */
+    padding: 10px;
+    padding-top: 55px; /* Ensure content doesn't go behind the navbar */
+}
+.content2 .container-fabrics {
+    margin-left: -15px;
+    margin-top: 30px;
+}       
+.content .container-supervision {
+    margin-left: -50px;
+    margin-top: 5px;
+}           
+.sidebar ul li.active a {
+display: block;
+padding: 8px;
+border-radius: 8px;
+background-color: #cbccd0; /* Blue background color */
+color: #3131d6; /* Dark blue text color */
+margin-left: -10px;
+margin-right: 8px;
+font-weight: 600;
+}
+.content .container-dashboard {
+    margin-left: -15px;
+    margin-top: 30px;
+}        
+.content .row{
+    margin-top: -50px;
+}
+table.table td,
+th {
+    text-align: center;
+}
+.col-md h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+.col-md p{
+    margin-top: -8px;
+    margin-left: 1px;
+    font-weight: 600;
+    color: rgb(135, 132, 132);
+}
+.col-md [class^="col"] {
+padding: 28px 18px; /* Adjust the padding value as needed */
+}
+
+    /* Upload section */
+    .upload-section {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 10%;
+        padding: 20px;
+        margin-top: 100px;
+        margin-right: 100px;
+        box-sizing: border-box;
+    }
+
+    .upload-section h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 350px;
+        margin-bottom: 10px;
+
+    }
+
+    .upload-section input[type="file"] {
+        margin-bottom: 10px;
+        margin-left: 400px;
+    }
+    .uploaded-media {
+    margin-top: 350px;
+    margin-left: 50px;
+    position: relative; /* Ensure consistent positioning */
+    width: 700px; /* Ensure consistent width */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.uploaded-media img, .uploaded-media video {
+    max-width: 100%; /* Ensure the media fits within the container */
+    height: auto; /* Allow height to adjust based on content */
+    position: absolute; /* Position media within the container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the media precisely */
+}
+
+section.col-sm{
+    background-color:rgb(255, 255, 255);
+    width: 350px;
+    height: 550px;
+    border-radius: 35px;
+    object-fit: contain;
+    margin-left: 650px;
+    margin-top: -15px;
+  }
+
+  .new{
+  color:black;
+  margin:0px;
+  padding:10px;
+  margin:0px;
+  margin-top:15px;
+  }
+  #columnchart_values {
+    /* Your styles here */
+    margin-left: -100px;
+}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .wrapper {
+        display: flex;
+        margin-left: 95px;
+    }
+
+    .content {
+        margin-right: 10px; /* Adjust spacing between content and content 2 */
+    }
+
+    .content2 {
+        margin-left: 10px; /* Adjust spacing between content 2 and content */
+        margin-top: 8px;
+    }
+
+    .defect-images {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .defect-image {
+        width: 100px; /* Adjust image width as needed */
+        height: auto; /* Maintain aspect ratio */
+        cursor: pointer; /* Add cursor pointer */
+    }
+
+    .table-fixed {
+        width: 100%; /* Set table width to 100% */
+    }
+
+    .table-fixed td,
+    .table-fixed th {
+        width: 20%; /* Set each cell width to 20% */
+    }
+</style>
+
+<div class="wrapper">
+    <div class="content">
+        <div class="container-supervision">
+            <div class="col-md">
+                <div class="col-md">
+                    <h4>Roll ID</h4>
+                    <p>{{ fabric_id }}</p>
+                </div>
+                <div class="col-md">
+                    <h4>Total Defects</h4>
+                    <p>{{ total_defects }}</p>
+                </div>
+                <div class="col-md">
+                    <h4>Supervised Date</h4>
+                    <p>{{ date_added }}</p>
+                </div>
+                {% if defect_types %}
+                <div class="col-md">
+                    <h4>Defect Type</h4>
+                    {% for defect_type, count in defect_types.items() %}
+                    <p>{{ defect_type }} - {{ count }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="container-fabrics">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-fixed">
+                    <thead>
+                        <tr>
+                            <th scope="col">Defect Type</th>
+                            <th scope="col">Defect Image</th>
+                            <th scope="col">Defect Boundary</th>
+                            <th scope="col">Defect Mask</th>
+                            <th scope="col">Coordinates</th>
+                            <th scope="col">Meters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for defect in defect_data %}
+                        <tr>
+                            <td>{{ defect.defect_type }}</td>
+                            <td><img src="data:image/png;base64,{{ defect.image }}" class="defect-image" alt="Defect Image"></td>
+                            <td><img src="data:image/png;base64,{{ defect.boundary }}" class="defect-image" alt="Defect Boundary"></td>
+                            <td><img src="data:image/png;base64,{{ defect.mask }}" class="defect-image" alt="Defect Mask"></td>
+                            <td>{{ defect.coordinates }}</td>
+                            <td>{{ defect.meters }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

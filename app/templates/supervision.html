@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ title }} </title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+   <style>
+    @font-face {
+    font-family: 'Fenomen Sans SCN Semi Bold';
+    src: url('path/to/your/font-file.woff2') format('woff2'),
+         url('path/to/your/font-file.woff') format('woff');
+    font-weight: 600; 
+    font-style: normal; 
+}
+
+/* Basic styles for navbar and sidebar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.logout-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust color as needed */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 93%;
+    margin-top: -500px;
+    padding-top: 10px;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #0056b3; /* Adjust hover color as needed */
+}
+
+/* Add this style for the logout button */
+.new2 .btnCustom {
+    padding: 10px 20px;
+    background-color: #dc3545; /* Adjust color as needed */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new2 .btnCustom:hover {
+    background-color: #c82333; /* Adjust hover color as needed */
+}
+
+/* Add this style for the upload button */
+.new .btnCustom {
+    padding: 10px 20px;
+    background-color: #28a745; /* Adjust color as needed */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new .btnCustom:hover {
+    background-color: #218838; /* Adjust hover color as needed */
+}
+
+.navbar {
+    background-color: white;
+    color: #000; /* Adjust text color for better visibility */
+    padding-bottom: -5px;
+    margin-top: -5px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Ensures navbar is above sidebar */
+    border-bottom: 2px solid rgb(211, 209, 209); /* Maintain the bold border */
+}
+
+.navbar .Title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.navbar .Title span {
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 5px;
+    color: rgb(84, 98, 194);
+}
+
+.navbar .logo {
+    width: 38px; /* Adjust the width of the logo */
+    height: 35px;
+}
+.navbar h2 {
+    font-size: 25px;
+    font-weight: 600;
+    padding-right: 72.5%;
+    color: #1f384c;
+    margin-left: 250px;
+    margin-top: -40px;
+}
+.sidebar {
+    background-color: #f1f2f7;
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Enable scrolling if sidebar content exceeds height */
+    margin-top: 0px; /* Ensure content doesn't go behind the navbar */
+    z-index: 1000; /* Ensure sidebar is above navbar */
+}
+
+.sidebar h6{
+    margin-left: 41px ;
+    margin-top: 100px;
+    font-weight: 550;
+    padding-bottom: -60px;
+    font-size: 15px;
+    color: #817f7f;
+}
+
+.sidebar .links {
+    margin-top: 2px;
+}
+
+.sidebar ul {
+    margin-top: 1px;
+    list-style: none;
+    padding: 0;
+    margin-left: 13%;
+}
+
+.sidebar ul li {
+    padding: 8px;
+    font-size: 17px;
+    font-family: 'Fenomen Sans SCN Semi Bold', Arial, sans-serif;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 20%; /* Adjust this value to match sidebar width */
+    padding: 10px;
+    padding-top: 100px; /* Ensure content doesn't go behind the navbar */
+}
+.content .container-fabrics {
+    margin-left: -15px;
+    margin-top: 30px;
+}     
+.content .container-supervision {
+    margin-left: -50px;
+    margin-top: 5px;
+}           
+.sidebar ul li.active a {
+display: block;
+padding: 8px;
+border-radius: 8px;
+background-color: #cbccd0; /* Blue background color */
+color: #3131d6; /* Dark blue text color */
+margin-left: -10px;
+margin-right: 8px;
+font-weight: 600;
+}
+.content .container-dashboard {
+    margin-left: -15px;
+    margin-top: 30px;
+}        
+
+table.table td,
+th {
+    text-align: center;
+}
+.col-md h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+.col-md p{
+    margin-top: -8px;
+    margin-left: 1px;
+    font-weight: 600;
+    color: rgb(135, 132, 132);
+}
+.col-md [class^="col"] {
+padding: 28px 18px; /* Adjust the padding value as needed */
+}
+
+    /* Upload section */
+    .upload-section {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 10%;
+        padding: 20px;
+        margin-top: 100px;
+        margin-right: 100px;
+        box-sizing: border-box;
+    }
+
+    .upload-section h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 350px;
+        margin-bottom: 10px;
+
+    }
+
+    .upload-section input[type="file"] {
+        margin-bottom: 10px;
+        margin-left: 400px;
+    }
+    .uploaded-media {
+    margin-top: 350px;
+    margin-left: 50px;
+    position: relative; /* Ensure consistent positioning */
+    width: 700px; /* Ensure consistent width */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.uploaded-media img, .uploaded-media video {
+    max-width: 100%; /* Ensure the media fits within the container */
+    height: auto; /* Allow height to adjust based on content */
+    position: absolute; /* Position media within the container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the media precisely */
+}
+
+section.col-sm{
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    height: 400px;
+    border-radius: 35px;
+    object-fit: contain;
+    margin-left: 670px;
+    margin-top: -35px;
+  }
+
+  .new{
+  color:black;
+  margin:0px;
+  padding:10px;
+  margin:0px;
+  margin-top:99px;
+  margin-left: 670px;
+  }
+  .new2{
+  color:black;
+  margin:0px;
+  padding:10px;
+  margin:0px;
+  margin-top: -5px;
+  margin-left: 670px;
+  }
+   </style> 
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="Title">
+            <img src="\static\Logo.png" alt="Logo" class="logo">
+            <b><span>FABRICO</span></b>
+        </div>
+       
+        <h2>{{ title }}</h2>
+        <a href="{{ url_for('Fabrico.logout') }}" class="logout-btn">Logout</a>
+    </div>
+    <div class="sidebar">
+        <h6>Menu</h6>
+        <div class="links">
+            <ul>
+                <li class="{% if title == 'Dashboard' %}active{% endif %}">
+                    <a href="/Fabrico/dashboard"> <i class='bx bxs-dashboard' ></i>
+                    Dashboard
+                    </a>
+                </li>
+                <li class="{% if title == 'Supervision' %}active{% endif %}">
+                    <a href="/Fabrico/supervision"> <i class='bx bxs-camera-home'></i>
+                        Supervision
+                    </a>
+                </li>
+                <li class="{% if title == 'Records' %}active{% endif %}">
+                    <a href="/Fabrico/fabrics"> <i class='bx bxs-file-find' ></i>
+                    Records
+                    </a>
+                </li>
+                <hr>
+                <li class="{% if title == 'My Account' %}active{% endif %}">
+                    <a> <i class='bx bxs-user'></i>
+                    {{userid}}
+                    </a>
+                </li>
+                {% if userid == 'Emp01' %}
+            <li class="{% if title == 'Admin Portal' %}active{% endif %}">
+                <a href="/Fabrico/adminPortal"> <i class='bx bxs-user'></i>
+                    Admin Portal
+                </a>
+            </li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+<div class="content">
+    <div class="container-supervision">
+        <div class="col-md">
+        
+        </div>
+    </div>
+</div>
+
+
+<section class="col-sm " >
+  <img src="{{ url_for('Fabrico.video') }}"   alt="Upload video"> 
+</section>
+<section>
+<div class="new" >
+<form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+    {{form.hidden_tag()}}
+    {{form.file(class_="custom-file-input")}}
+    <div>
+    <button type="submit" name="favorite" value="x" class="btnCustom">
+        Submit
+    </button>
+  </div>
+  </form>
+</div>
+</section>
+<div class="new2" >
+    <form method="POST" action="{{ url_for('Fabrico.addFabric') }}">
+        <button type="submit" class="btnCustom">
+            View Report
+        </button>
+    </form>
+</div>
+
+
+</body>
+</html>
